@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Todo from './Todo'
 import './App.css'
 
 function App() {
@@ -17,22 +18,32 @@ function App() {
         </a>
         <h1>Vite + React</h1>
       </div>
-      <Person></Person>
+      
+      <Todo task="Learn React" 
+      IsDone={true}></Todo>
+
+      <Todo task="Core conchept" 
+      IsDone={false}></Todo>
+
+      <Todo task="Try jsx" 
+      IsDone={true}></Todo>
+
+      {/* <Person></Person>
       <Device name="laptop" price="20k"></Device>
       <Device name="mobile" price="10k"></Device>
       <Students></Students>
       <Student grade="8" score="99"></Student>
       <Student></Student>
-      <Student></Student>
+      <Student></Student> */}
     </>
   )
 }
 
-const {grade, score} = {grade: '8', score: '99'}
+const { grade, score } = { grade: '8', score: '99' }
 
-function Student ({grade, score}) {
+function Student({ grade = 1, score = 0 }) {
   console.log(grade, score)
-  return(
+  return (
     <div className='student'>
       <h3>This s a student</h3>
       <p>grade: {grade} </p>
@@ -43,9 +54,9 @@ function Student ({grade, score}) {
 
 
 
-function Device (props) {
-console.log(props)
-  return(
+function Device(props) {
+  console.log(props)
+  return (
     <h2>This Device: {props.name} price: {props.price} </h2>
   )
 }
@@ -63,7 +74,7 @@ function Person() {
   }
 
   return (
-    <div style={DispayStye }> 
+    <div style={DispayStye}>
       <h3> im a person: {name} personAge: {age + mone}</h3 >
     </div>
   )
