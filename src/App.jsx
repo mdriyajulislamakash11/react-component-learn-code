@@ -3,9 +3,30 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Todo from './Todo'
 import './App.css'
+import Actor from './Actor'
+import Singer from './assets/Singer'
+import BookStore from './assets/BookStore'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const actors = ['sakib', 'raj', 'khan','rubel']
+
+  const books = [
+    {id: 1, name: 'arbi', price: 210},
+    {id: 2, name: 'bangla', price: 250},
+    {id: 3, name: 'english', price: 270},
+    {id: 4, name: 'math', price: 870},
+    {id: 5, name: 'tajbid', price: 560},
+  ]
+
+  const singers = [
+    {id: 1, name:'al amin', age: 28},
+    {id: 2, name:'akash', age: 23},
+    {id: 3, name:'himel', age: 21},
+    {id: 4, name:'junayed', age: 13},
+    {id: 5, name:'junayed', age: 10},
+  ]
 
   return (
     <>
@@ -18,15 +39,27 @@ function App() {
         </a>
         <h1>Vite + React</h1>
       </div>
-      
-      <Todo task="Learn React" 
+
+      <BookStore books={books}></BookStore>
+
+    {
+      singers.map(singer => <Singer singer={singer}></Singer>)
+    }
+
+
+      {/* <Actor name={"bappi"}></Actor>
+      {
+        actors.map(actor => <Actor name={actor}></Actor>)
+      } */}
+
+      {/* <Todo task="Learn React" 
       IsDone={true}></Todo>
 
       <Todo task="Core conchept" 
       IsDone={false}></Todo>
 
       <Todo task="Try jsx" 
-      IsDone={true}></Todo>
+      IsDone={true}></Todo> */}
 
       {/* <Person></Person>
       <Device name="laptop" price="20k"></Device>
